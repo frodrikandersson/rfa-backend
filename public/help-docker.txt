@@ -1,0 +1,35 @@
+docker-compose.yml
+    services:
+        mongo:
+            image: mongo:latest
+            restart: no
+            ports: 
+                - 27017:27017
+            volumes:
+                - mongodata:/data/db
+    volumes:
+        mongodata:
+
+
+Ge filen till en ny kollega
+
+I terminalen
+    docker compose up
+
+
+----------------------------------------------
+
+npm install
+
+connect to node/mongo database
+I terminalen    
+    node server.js
+
+
+npm install --save-dev nodemon
+    saves to devDependencies instead of dependencies because we only need it while developing
+
+add in "scripts"
+    "dev" : "nodemon"
+we can now use "npm run dev" in terminal
+only use this during development time
