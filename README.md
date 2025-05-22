@@ -56,3 +56,25 @@ docker-compose down
 > If you have docker set up you can start the docker connection through docker desktop. Click on "Containers", find "rfa-backend" and press the start button.
 
 When we push this live we'll change some localhost urls to Vercels provided url, or something else.
+
+## PROJECT STRUCTURE
+rfa-backend/
+├── api/                     # Optional extra APIs
+├── certs/                   # SSL certs for DB (e.g., Aiven)
+├── public/                  # Static files
+│   └── assets/              # Image and file assets
+├── src/
+│   ├── config/              # App configuration (env, DB, etc.)
+│   ├── constants/           # Constants and enums
+│   ├── controllers/         # Route logic
+│   ├── middleware/          # Express middleware
+│   ├── models/              # DB models and interfaces
+│   ├── routes/              # Route declarations
+│   ├── utilities/           # Helper functions
+│   └── server.ts            # Server entry point
+├── app.ts                   # Express app setup
+├── init.sql                 # SQL script to initialize DB schema
+├── Dockerfile               # Backend Dockerfile
+├── docker-compose.yml       # Full service setup (backend + db)
+├── tsconfig.json            # TypeScript config
+└── README.md                # You're here
