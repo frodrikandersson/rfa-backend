@@ -1,9 +1,15 @@
-version: '3.8'
-
 services:
-  backend:
+  app:
     build: .
-    ports:
-      - "4000:4000"
     env_file:
       - .env
+    ports:
+      - "${APP_PORT}:${APP_PORT}"
+    environment:
+      NODE_ENV: ${NODE_ENV}
+      DATABASE_URL: ${DATABASE_URL}
+      SSL_CA_CERT: /usr/src/app/ca.pem
+    volumes:
+      - ./certs/ca.pem:/usr/src/app/ca.pem:ro
+    restart: unless-stopped
+    command: npm run dev

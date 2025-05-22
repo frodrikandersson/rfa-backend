@@ -13,7 +13,8 @@ dist-ssr
 *.local
 package-lock.json
 .env
-
+*.pem
+public/secrets/*
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
